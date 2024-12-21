@@ -146,8 +146,11 @@ module.exports = class UserController {
 
         const {name, email, phone, password, confirmpassword} = req.body
 
-        let image = ''
 
+        if(req.file) {
+            user.image = req.file.filename
+        }
+   
         // Validations
 
         if (!name) {
