@@ -68,6 +68,7 @@ module.exports = class UserController {
             res.status(500).json({message: error})
         }
     }
+
     static async login(req, res) {
         const {email, password} = req.body
 
@@ -120,6 +121,7 @@ module.exports = class UserController {
         }
         res.status(200).send(currentUser)
     }
+    
     static async getUserById(req, res) {
 
         const id = req.params.id
